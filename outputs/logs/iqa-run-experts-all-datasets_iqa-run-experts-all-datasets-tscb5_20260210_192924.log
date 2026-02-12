@@ -1,180 +1,0 @@
-Running dataset=livec data_root=/local/data/b-s-farrahi phase=test
-Loading dataset livec from /local/data/b-s-farrahi ...
-/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
-  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
-Gonna run expert arniqa on 1161 (already warmed with=9 images)
-arniqa: 200/1161 processed
-arniqa: 400/1161 processed
-arniqa: 600/1161 processed
-arniqa: 800/1161 processed
-arniqa: 1000/1161 processed
-arniqa: 1161/1161 processed
-Saved 1152 rows to /local/outputs/preds/livec/test/preds_arniqa.csv
-/opt/conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
-- configuration_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
-- modeling_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 4/4 [00:00<00:00, 1774.05it/s]
-Instantiating LlamaAttention without passing `layer_idx` is not recommended and will to errors during the forward call, if caching is used. Please make sure to provide a `layer_idx` when creating this class.
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Using the latest cached version of the dataset since VQA-CityU/Anchor_images couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /pip-cache/hf/datasets/VQA-CityU___anchor_images/default/0.0.0/60ba574874d01e2f1bee0e8afe8e2cb187ede13e (last modified on Mon Feb  9 22:25:47 2026).
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.16s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.18s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.24s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.96s/it]
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-Gonna run expert compare2score on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_compare2score.csv
-Loading pretrained model QualiCLIP from /pip-cache/torch/hub/pyiqa/QualiCLIP%2B_koniq.pth
-Gonna run expert qualiclip+ on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_qualiclip+.csv
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-A new version of the following files was downloaded from https://huggingface.co/q-future/one-align:
-- configuration_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-A new version of the following files was downloaded from https://huggingface.co/q-future/one-align:
-- modeling_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 514.20it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.61s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.99s/it]
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-Gonna run expert qalign on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_qalign.csv
-Gonna run expert clipiqa+ on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_clipiqa+.csv
-/opt/conda/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
-  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
-Loading pretrained model MANIQA from /pip-cache/torch/hub/pyiqa/ckpt_koniq10k.pt
-Gonna run expert maniqa on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_maniqa.csv
-Loading pretrained model MUSIQ from /pip-cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
-Gonna run expert musiq on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_musiq.csv
-Loading pretrained model CFANet from /pip-cache/torch/hub/pyiqa/cfanet_nr_koniq_res50-9a73138b.pth
-Gonna run expert topiq_nr on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_topiq_nr.csv
-Loading pretrained model TReS from /pip-cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
-Gonna run expert tres on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_tres.csv
-Loading pretrained model LIQE from /pip-cache/torch/hub/pyiqa/liqe_koniq.pt
-Gonna run expert liqe on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_liqe.csv
-Loading pretrained model HyperNet from /pip-cache/torch/hub/pyiqa/HyperIQA-resnet50-koniq10k-c96c41b1.pth
-Gonna run expert hyperiqa on 1161 (already warmed with=1152 images)
-Saved 9 rows to /local/outputs/preds/livec/test/preds_hyperiqa.csv
-Running dataset=koniq10k data_root=/local/data/b-s-farrahi phase=test
-Loading dataset koniq10k from /local/data/b-s-farrahi ...
-/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
-  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
-Gonna run expert arniqa on 2015 (already warmed with=10 images)
-arniqa: 200/2015 processed
-arniqa: 400/2015 processed
-arniqa: 600/2015 processed
-arniqa: 800/2015 processed
-arniqa: 1000/2015 processed
-arniqa: 1200/2015 processed
-arniqa: 1400/2015 processed
-arniqa: 1600/2015 processed
-arniqa: 1800/2015 processed
-arniqa: 2000/2015 processed
-arniqa: 2015/2015 processed
-Saved 2005 rows to /local/outputs/preds/koniq10k/test/preds_arniqa.csv
-/opt/conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
-- configuration_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
-- modeling_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 4/4 [00:00<00:00, 2107.69it/s]
-Instantiating LlamaAttention without passing `layer_idx` is not recommended and will to errors during the forward call, if caching is used. Please make sure to provide a `layer_idx` when creating this class.
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Using the latest cached version of the dataset since VQA-CityU/Anchor_images couldn't be found on the Hugging Face Hub (offline mode is enabled).
-Found the latest cached dataset configuration 'default' at /pip-cache/hf/datasets/VQA-CityU___anchor_images/default/0.0.0/60ba574874d01e2f1bee0e8afe8e2cb187ede13e (last modified on Mon Feb  9 22:25:47 2026).
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:07,  2.38s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.33s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.32s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  1.86s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  2.03s/it]
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-Gonna run expert compare2score on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_compare2score.csv
-Loading pretrained model QualiCLIP from /pip-cache/torch/hub/pyiqa/QualiCLIP%2B_koniq.pth
-Gonna run expert qualiclip+ on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_qualiclip+.csv
-/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-A new version of the following files was downloaded from https://huggingface.co/q-future/one-align:
-- configuration_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-A new version of the following files was downloaded from https://huggingface.co/q-future/one-align:
-- modeling_mplug_owl2.py
-. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1975.18it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.42s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.54s/it]
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
-  warnings.warn(
-Gonna run expert qalign on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_qalign.csv
-Gonna run expert clipiqa+ on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_clipiqa+.csv
-/opt/conda/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
-  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
-Loading pretrained model MANIQA from /pip-cache/torch/hub/pyiqa/ckpt_koniq10k.pt
-Gonna run expert maniqa on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_maniqa.csv
-Loading pretrained model MUSIQ from /pip-cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
-Gonna run expert musiq on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_musiq.csv
-Loading pretrained model CFANet from /pip-cache/torch/hub/pyiqa/cfanet_nr_koniq_res50-9a73138b.pth
-Gonna run expert topiq_nr on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_topiq_nr.csv
-Loading pretrained model TReS from /pip-cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
-Gonna run expert tres on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_tres.csv
-Loading pretrained model LIQE from /pip-cache/torch/hub/pyiqa/liqe_koniq.pt
-Gonna run expert liqe on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_liqe.csv
-Loading pretrained model HyperNet from /pip-cache/torch/hub/pyiqa/HyperIQA-resnet50-koniq10k-c96c41b1.pth
-Gonna run expert hyperiqa on 2015 (already warmed with=2005 images)
-Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_hyperiqa.csv
-Running dataset=tid2013 data_root=/local/data/b-s-farrahi phase=test
-Loading dataset tid2013 from /local/data/b-s-farrahi ...
-/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
-  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
-Gonna run expert arniqa on 3000 (already warmed with=0 images)
-Traceback (most recent call last):
-  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 148, in <module>
-    main()
-  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 127, in main
-    y = model(img_path)
-  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/opt/conda/lib/python3.10/site-packages/pyiqa/models/inference_model.py", line 99, in forward
-    target = imread2tensor(target, rgb=True)
-  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 60, in imread2tensor
-    img = imread2pil(img_source, rgb)
-  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 43, in imread2pil
-    img = Image.open(img_source)
-  File "/opt/conda/lib/python3.10/site-packages/PIL/Image.py", line 3247, in open
-    fp = builtins.open(filename, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/tid2013/distorted_images/I01_11_1.BMP'

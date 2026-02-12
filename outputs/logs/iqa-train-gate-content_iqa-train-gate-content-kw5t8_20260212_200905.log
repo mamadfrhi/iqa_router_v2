@@ -1,0 +1,5 @@
+[train] koniq10k content router
+Traceback (most recent call last):
+  File "/local/code/pyiqa_pipeline/06_train_router_pyiqa.py", line 8, in <module>
+    from sklearn.ensemble import GradientBoostingRegressor
+ModuleNotFoundError: No module named 'sklearn'

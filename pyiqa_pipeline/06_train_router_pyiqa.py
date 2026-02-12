@@ -66,10 +66,12 @@ def main() -> None:
         raise ValueError("No pred_* columns found in modeling CSV")
 
     ignore_prefixes = ("pred_", "latency_ms_")
-    base_cols = {"image_path", "ref_path", "mos"}
+    base_cols = {"image_path", "ref_path", "mos", "image"}
     feature_cols = [c for c in cols if c not in base_cols and not any(c.startswith(p) for p in ignore_prefixes)]
+    if feature_cols:
+        feature_cols = [c for c in feature_cols if pd.api.types.is_numeric_dtype(df[c])]
     if not feature_cols:
-        raise ValueError("No feature columns found; provide --features-csv")
+        raise ValueError("No numeric feature columns found; provide --features-csv")
 
     lat_cols_aligned: List[Optional[str]] = []
     for pc in pred_cols:

@@ -1,0 +1,108 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iqa-extract-features
+  namespace: b-s-farrahi
+spec:
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsUser: 0
+        fsGroup: 1026
+      tolerations:
+      - key: dgx
+        operator: Equal
+        value: access
+        effect: NoSchedule
+      containers:
+      - name: iqa
+        image: ws.ab/b-s-farrahi/iqa-pyiqa:0.3
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        resources:
+          limits:
+            cpu: "18"
+            memory: "35Gi"
+          requests:
+            cpu: "8"
+            memory: "16Gi"
+        command: ["/bin/bash","-lc"]
+        args:
+        - |
+          set -euo pipefail
+          umask 0002
+
+          LOG_DIR="/local/outputs/logs"
+          mkdir -p "$LOG_DIR"
+          LOG_TS=$(date +%Y%m%d_%H%M%S)
+          POD_NAME=${HOSTNAME:-pod}
+          LOG_FILE="$LOG_DIR/iqa-extract-features_${POD_NAME}_${LOG_TS}.log"
+          exec > >(tee -a "$LOG_FILE") 2>&1
+
+          OUT="/local/outputs"
+          PIPE="/local/code/pyiqa_pipeline"
+          CONTENT_SIZE="512x384"
+          PARALLELISM="2"
+          WORKERS="8"
+          BACKEND="processes"
+          CHUNKSIZE="50"
+
+          if ! python3 -c "import cv2; print('cv2: ok')"; then
+            echo "cv2 missing; installing opencv-python-headless"
+            python3 -m pip install --no-cache-dir opencv-python-headless
+          fi
+
+          declare -a SPLITS=(
+            "koniq10k_test"
+            "livec_val"
+            "spaq_val"
+            "tid2013_test"
+          )
+
+          export OUT PIPE CONTENT_SIZE WORKERS BACKEND CHUNKSIZE
+          run_one() {
+            local split="$1"
+            local labels="$OUT/labels_${split}.csv"
+            local feats="$OUT/features_${split}_${CONTENT_SIZE}.csv"
+            echo "[features] split=${split} labels=${labels} out=${feats}"
+            python3 -u "$PIPE/05_extract_features.py" \
+              --labels "$labels" \
+              --content-size "$CONTENT_SIZE" \
+              --output "$feats" \
+              --workers "$WORKERS" \
+              --backend "$BACKEND" \
+              --chunksize "$CHUNKSIZE"
+          }
+          export -f run_one
+
+          printf "%s\n" "${SPLITS[@]}" | xargs -I{} -P "$PARALLELISM" bash -lc 'run_one "$@"' _ {}
+
+          P="/local/outputs"
+          chgrp 1026 "$P" || true
+          chmod g+rx "$P" || true
+          chgrp -R 1026 "$P" || true
+          chmod -R g+rwX "$P" || true
+        volumeMounts:
+        - mountPath: /local/code
+          name: code
+        - mountPath: /local/outputs
+          name: outputs
+        - mountPath: /shared/hdd/data
+          name: data
+      volumes:
+      - name: code
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2
+          type: Directory
+      - name: outputs
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2/outputs
+          type: DirectoryOrCreate
+      - name: data
+        hostPath:
+          path: /shared/hdd/data
+          type: Directory

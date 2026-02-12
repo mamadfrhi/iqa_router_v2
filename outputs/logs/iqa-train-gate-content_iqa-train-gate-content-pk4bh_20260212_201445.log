@@ -1,0 +1,27 @@
+Collecting scikit-learn
+  Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Requirement already satisfied: numpy>=1.22.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.26.3)
+Requirement already satisfied: scipy>=1.8.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.14.1)
+Requirement already satisfied: joblib>=1.2.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.5.3)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn)
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 74.4 MB/s  0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: threadpoolctl, scikit-learn
+
+Successfully installed scikit-learn-1.7.2 threadpoolctl-3.6.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[train] koniq10k content router
+Traceback (most recent call last):
+  File "/local/code/pyiqa_pipeline/06_train_router_pyiqa.py", line 185, in <module>
+    main()
+  File "/local/code/pyiqa_pipeline/06_train_router_pyiqa.py", line 84, in main
+    Xnf = df[need_cols].to_numpy(dtype=np.float64)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/core/frame.py", line 2002, in to_numpy
+    result = self._mgr.as_array(dtype=dtype, copy=copy, na_value=na_value)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/core/internals/managers.py", line 1713, in as_array
+    arr = self._interleave(dtype=dtype, na_value=na_value)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/core/internals/managers.py", line 1772, in _interleave
+    result[rl.indexer] = arr
+ValueError: could not convert string to float: '10007357496.jpg'

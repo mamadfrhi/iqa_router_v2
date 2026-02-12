@@ -1,11 +1,20 @@
 import argparse
 import os
 import sys
-from typing import Any, Dict, List, Optional, Tuple, cast
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+import multiprocessing as mp
+from typing import Any, Dict, List, Optional, Tuple, cast, Iterable
 
 import numpy as np
 import pandas as pd
 from PIL import Image
+
+try:
+    import cv2
+    _HAS_CV2 = True
+except Exception:
+    cv2 = None
+    _HAS_CV2 = False
 
 try:
     from PIL.Image import Resampling
@@ -47,6 +56,8 @@ def _to_numpy_rgb(path: str, target_size: Optional[Tuple[int, int]] = None) -> T
 
 
 def _conv2d(img: np.ndarray, kernel: np.ndarray) -> np.ndarray:
+    if _HAS_CV2:
+        return cv2.filter2D(img, ddepth=cv2.CV_32F, kernel=kernel, borderType=cv2.BORDER_REFLECT)
     kh, kw = kernel.shape
     pad_h, pad_w = kh // 2, kw // 2
     padded = np.pad(img, ((pad_h, pad_h), (pad_w, pad_w)), mode="reflect")
@@ -60,12 +71,20 @@ def _conv2d(img: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 
 
 def _laplacian_var(gray: np.ndarray) -> float:
+    if _HAS_CV2:
+        resp = cv2.Laplacian(gray, cv2.CV_32F, ksize=3)
+        return float(np.var(resp))
     kernel = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]], dtype=np.float32)
     resp = _conv2d(gray, kernel)
     return float(np.var(resp))
 
 
 def _gradient_energy(gray: np.ndarray) -> float:
+    if _HAS_CV2:
+        gx = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+        gy = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+        g2 = gx * gx + gy * gy
+        return float(np.mean(g2))
     gx = np.zeros_like(gray, dtype=np.float32)
     gy = np.zeros_like(gray, dtype=np.float32)
     gx[:, 1:-1] = gray[:, 2:] - gray[:, :-2]
@@ -75,6 +94,14 @@ def _gradient_energy(gray: np.ndarray) -> float:
 
 
 def _edge_density(gray: np.ndarray) -> float:
+    if _HAS_CV2:
+        gx = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
+        gy = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
+        mag = np.sqrt(gx * gx + gy * gy)
+        thr = float(np.mean(mag) + np.std(mag))
+        if thr <= 0:
+            return 0.0
+        return float(np.mean(mag > thr))
     gx = np.zeros_like(gray, dtype=np.float32)
     gy = np.zeros_like(gray, dtype=np.float32)
     gx[:, 1:-1] = gray[:, 2:] - gray[:, :-2]
@@ -144,6 +171,12 @@ def _features_for_path(path: str, target_size: Optional[Tuple[int, int]]) -> Dic
     }
 
 
+def _compute_row(arg: Tuple[str, Optional[Tuple[int, int]]]) -> Dict[str, float]:
+    path, target_size = arg
+    feats = _features_for_path(path, target_size)
+    return {"image_path": path, **feats}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Extract simple content features for routing")
     ap.add_argument("--labels", required=False, type=str, default="", help="CSV with image_path")
@@ -155,6 +188,10 @@ def main() -> None:
     ap.add_argument("--content-size", required=False, type=str, default=None)
     ap.add_argument("--output", required=True, type=str)
     ap.add_argument("--progress-every", type=int, default=200)
+    ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--workers", type=int, default=0, help="0=auto, 1=disable parallel")
+    ap.add_argument("--backend", type=str, default="processes", choices=["threads", "processes"])
+    ap.add_argument("--chunksize", type=int, default=50)
     args = ap.parse_args()
 
     if args.labels:
@@ -172,21 +209,39 @@ def main() -> None:
             mos_normalize=bool(args.mos_normalize),
         )
 
+    if args.limit is not None:
+        df = df.head(int(args.limit))
+
     target_size = _parse_size(args.content_size)
 
-    rows: List[Dict] = []
-    n = 0
-    total = len(df)
+    task_args: List[Tuple[str, Optional[Tuple[int, int]]]] = []
     for _, r in df.iterrows():
         path = str(r["image_path"]).strip()
         if not path:
             continue
-        feats = _features_for_path(path, target_size)
-        row = {"image_path": path, **feats}
-        rows.append(row)
-        n += 1
-        if args.progress_every and (n % args.progress_every == 0 or n == total):
-            print(f"features: {n}/{total} processed")
+        task_args.append((path, target_size))
+
+    rows: List[Dict] = []
+    total = len(task_args)
+    progress_every = int(max(1, args.progress_every))
+
+    if args.workers <= 1 or total == 0:
+        for i, arg in enumerate(task_args, start=1):
+            rows.append(_compute_row(arg))
+            if args.progress_every and (i % progress_every == 0 or i == total):
+                print(f"features: {i}/{total} processed")
+    else:
+        max_workers = args.workers if args.workers > 0 else max(1, mp.cpu_count())
+        Executor = ProcessPoolExecutor if args.backend == "processes" else ThreadPoolExecutor
+        with Executor(max_workers=max_workers) as ex:
+            if args.backend == "processes":
+                it: Iterable[Dict] = ex.map(_compute_row, task_args, chunksize=max(1, int(args.chunksize)))
+            else:
+                it = ex.map(_compute_row, task_args)
+            for i, row in enumerate(it, start=1):
+                rows.append(row)
+                if args.progress_every and (i % progress_every == 0 or i == total):
+                    print(f"features: {i}/{total} processed")
 
     out_df = pd.DataFrame(rows)
     os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)

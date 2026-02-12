@@ -1,0 +1,107 @@
+Collecting scikit-learn
+  Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Requirement already satisfied: numpy>=1.22.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.26.3)
+Requirement already satisfied: scipy>=1.8.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.14.1)
+Requirement already satisfied: joblib>=1.2.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.5.3)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn)
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 74.7 MB/s  0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: threadpoolctl, scikit-learn
+
+Successfully installed scikit-learn-1.7.2 threadpoolctl-3.6.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[train] koniq10k content router
+/local/outputs/routers/koniq10k_content_512x384/router_meta.json
+[gate] livec with trained router
+=== lambda=0.0 ===
+Downloading: "https://huggingface.co/chaofengc/IQA-PyTorch-Weights/resolve/main/musiq_koniq_ckpt-e95806b9.pth" to /root/.cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+
+  0%|          | 0.00/104M [00:00<?, ?B/s] 38%|███▊      | 39.2M/104M [00:00<00:00, 411MB/s] 86%|████████▋ | 89.4M/104M [00:00<00:00, 478MB/s]100%|██████████| 104M/104M [00:00<00:00, 455MB/s] 
+Loading pretrained model MUSIQ from /root/.cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+  0%|          | 0.00/97.8M [00:00<?, ?B/s] 16%|█▌        | 15.9M/97.8M [00:00<00:00, 165MB/s] 32%|███▏      | 31.6M/97.8M [00:00<00:00, 148MB/s] 73%|███████▎  | 71.5M/97.8M [00:00<00:00, 263MB/s]100%|██████████| 97.8M/97.8M [00:00<00:00, 268MB/s]
+Downloading: "https://huggingface.co/chaofengc/IQA-PyTorch-Weights/resolve/main/tres_koniq-f0502926.pth" to /root/.cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+
+  0%|          | 0.00/582M [00:00<?, ?B/s]  7%|▋         | 41.2M/582M [00:00<00:01, 432MB/s] 15%|█▌        | 89.9M/582M [00:00<00:01, 478MB/s] 24%|██▎       | 138M/582M [00:00<00:00, 487MB/s]  32%|███▏      | 184M/582M [00:00<00:00, 464MB/s] 39%|███▉      | 229M/582M [00:00<00:00, 466MB/s] 47%|████▋     | 274M/582M [00:00<00:00, 430MB/s] 54%|█████▍    | 315M/582M [00:00<00:00, 431MB/s] 64%|██████▍   | 372M/582M [00:00<00:00, 482MB/s] 72%|███████▏  | 419M/582M [00:00<00:00, 484MB/s] 80%|███████▉  | 465M/582M [00:01<00:00, 406MB/s] 87%|████████▋ | 506M/582M [00:01<00:00, 385MB/s] 94%|█████████▎| 544M/582M [00:01<00:00, 326MB/s]100%|██████████| 582M/582M [00:01<00:00, 408MB/s]
+Loading pretrained model TReS from /root/.cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- configuration_mplug_owl2.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_attn_mask_utils.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_llama2.py
+- modeling_attn_mask_utils.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- visual_encoder.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_mplug_owl2.py
+- modeling_llama2.py
+- visual_encoder.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards:  25%|██▌       | 1/4 [00:06<00:18,  6.14s/it]Downloading shards:  50%|█████     | 2/4 [00:11<00:11,  5.84s/it]Downloading shards:  75%|███████▌  | 3/4 [00:17<00:05,  5.91s/it]Downloading shards: 100%|██████████| 4/4 [00:21<00:00,  5.07s/it]Downloading shards: 100%|██████████| 4/4 [00:21<00:00,  5.38s/it]
+Instantiating LlamaAttention without passing `layer_idx` is not recommended and will to errors during the forward call, if caching is used. Please make sure to provide a `layer_idx` when creating this class.
+Generating train split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 5/5 [00:00<00:00, 290.34 examples/s]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.13s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.22s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.21s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.78s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.93s/it]
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam0.00.csv (rows=1161)
+=== lambda=0.05 ===
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam0.05.csv (rows=1161)
+=== lambda=0.1 ===
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam0.10.csv (rows=1161)
+=== lambda=0.2 ===
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam0.20.csv (rows=1161)
+=== lambda=0.5 ===
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam0.50.csv (rows=1161)
+=== lambda=1.0 ===
+[gate] 200/1161 processed
+[gate] 400/1161 processed
+[gate] 600/1161 processed
+[gate] 800/1161 processed
+[gate] 1000/1161 processed
+[gate] 1161/1161 processed
+Saved gating results: /local/outputs/routers/koniq10k_content_512x384/livec_gate_lam1.00.csv (rows=1161)
+[eval] lambda=0.10
+Wrote router metrics to /local/outputs/routers/koniq10k_content_512x384/livec_metrics_lam0.10.json

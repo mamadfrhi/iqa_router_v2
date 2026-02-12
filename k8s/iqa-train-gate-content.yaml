@@ -1,0 +1,108 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iqa-train-gate-content
+  namespace: b-s-farrahi
+spec:
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsUser: 0
+        fsGroup: 1026
+      tolerations:
+      - key: dgx
+        operator: Equal
+        value: access
+        effect: NoSchedule
+      containers:
+      - name: iqa
+        image: ws.ab/b-s-farrahi/iqa-pyiqa:0.3
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+            cpu: "18"
+            memory: "35Gi"
+          requests:
+            nvidia.com/gpu: 1
+            cpu: "18"
+            memory: "35Gi"
+        command: ["/bin/bash","-lc"]
+        args:
+        - |
+          set -euo pipefail
+          umask 0002
+
+          LOG_DIR="/local/outputs/logs"
+          mkdir -p "$LOG_DIR"
+          LOG_TS=$(date +%Y%m%d_%H%M%S)
+          POD_NAME=${HOSTNAME:-pod}
+          LOG_FILE="$LOG_DIR/iqa-train-gate-content_${POD_NAME}_${LOG_TS}.log"
+          exec > >(tee -a "$LOG_FILE") 2>&1
+
+          OUT="/local/outputs"
+          PIPE="/local/code/pyiqa_pipeline"
+
+          python3 -c "import sklearn" 2>/dev/null || python3 -m pip install --no-cache-dir scikit-learn
+
+          TRAIN_ROUTER_DIR="$OUT/routers/koniq10k_content_512x384"
+          mkdir -p "$TRAIN_ROUTER_DIR"
+
+          echo "[train] koniq10k content router"
+          python3 -u "$PIPE/06_train_router_pyiqa.py" \
+            --modeling-csv "$OUT/koniq10k_test_modeling.csv" \
+            --features-csv "$OUT/features_koniq10k_test_512x384.csv" \
+            --output-dir "$TRAIN_ROUTER_DIR"
+
+          echo "[gate] livec with trained router"
+          python3 -u "$PIPE/07_gate_router_pyiqa.py" \
+            --labels "$OUT/labels_livec_val.csv" \
+            --features-csv "$OUT/features_livec_val_512x384.csv" \
+            --content-size 512x384 \
+            --router-dir "$TRAIN_ROUTER_DIR" \
+            --device cuda \
+            --lambda 0,0.05,0.1,0.2,0.5,1.0 \
+            --run-chosen \
+            --output "$TRAIN_ROUTER_DIR/livec_gate_lam{lam:.2f}.csv"
+
+          echo "[eval] lambda=0.10"
+          python3 -u "$PIPE/08_eval_router_outputs.py" \
+            --router-csv "$TRAIN_ROUTER_DIR/livec_gate_lam0.10.csv" \
+            --output "$TRAIN_ROUTER_DIR/livec_metrics_lam0.10.json"
+
+          P="/local/outputs"
+          chgrp 1026 "$P" || true
+          chmod g+rx "$P" || true
+          chgrp -R 1026 "$P" || true
+          chmod -R g+rwX "$P" || true
+        volumeMounts:
+        - mountPath: /local/code
+          name: code
+        - mountPath: /local/outputs
+          name: outputs
+        - mountPath: /shared/hdd/data
+          name: data
+        - mountPath: /pip-cache
+          name: pip-cache
+      volumes:
+      - name: code
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2
+          type: Directory
+      - name: outputs
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2/outputs
+          type: DirectoryOrCreate
+      - name: data
+        hostPath:
+          path: /shared/hdd/data
+          type: Directory
+      - name: pip-cache
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/pip-cache
+          type: DirectoryOrCreate

@@ -1,0 +1,51 @@
+Collecting scikit-learn
+  Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Requirement already satisfied: numpy>=1.22.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.26.3)
+Requirement already satisfied: scipy>=1.8.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.14.1)
+Requirement already satisfied: joblib>=1.2.0 in /opt/conda/lib/python3.10/site-packages (from scikit-learn) (1.5.3)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn)
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 75.0 MB/s  0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: threadpoolctl, scikit-learn
+
+Successfully installed scikit-learn-1.7.2 threadpoolctl-3.6.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[train] koniq10k content router
+/local/outputs/routers/koniq10k_content_512x384/router_meta.json
+[gate] livec with trained router
+=== lambda=0.0 ===
+Downloading: "https://huggingface.co/chaofengc/IQA-PyTorch-Weights/resolve/main/musiq_koniq_ckpt-e95806b9.pth" to /root/.cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+
+  0%|          | 0.00/104M [00:00<?, ?B/s] 34%|███▎      | 34.8M/104M [00:00<00:00, 362MB/s] 70%|██████▉   | 72.5M/104M [00:00<00:00, 382MB/s]100%|██████████| 104M/104M [00:00<00:00, 388MB/s] 
+Loading pretrained model MUSIQ from /root/.cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth
+  0%|          | 0.00/97.8M [00:00<?, ?B/s] 32%|███▏      | 31.5M/97.8M [00:00<00:00, 330MB/s] 65%|██████▌   | 63.9M/97.8M [00:00<00:00, 335MB/s]100%|██████████| 97.8M/97.8M [00:00<00:00, 355MB/s]
+Downloading: "https://huggingface.co/chaofengc/IQA-PyTorch-Weights/resolve/main/tres_koniq-f0502926.pth" to /root/.cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+
+  0%|          | 0.00/582M [00:00<?, ?B/s]  6%|▌         | 34.4M/582M [00:00<00:01, 360MB/s] 13%|█▎        | 75.5M/582M [00:00<00:01, 400MB/s] 21%|██▏       | 125M/582M [00:00<00:01, 455MB/s]  29%|██▉       | 168M/582M [00:00<00:00, 434MB/s] 36%|███▌      | 210M/582M [00:00<00:01, 341MB/s] 43%|████▎     | 251M/582M [00:00<00:00, 366MB/s] 50%|█████     | 292M/582M [00:00<00:00, 383MB/s] 58%|█████▊    | 336M/582M [00:00<00:00, 406MB/s] 65%|██████▍   | 376M/582M [00:00<00:00, 404MB/s] 72%|███████▏  | 417M/582M [00:01<00:00, 410MB/s] 79%|███████▊  | 457M/582M [00:01<00:00, 414MB/s] 86%|████████▌ | 500M/582M [00:01<00:00, 425MB/s] 93%|█████████▎| 542M/582M [00:01<00:00, 426MB/s]100%|██████████| 582M/582M [00:01<00:00, 404MB/s]
+Loading pretrained model TReS from /root/.cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- configuration_mplug_owl2.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_attn_mask_utils.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_llama2.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- visual_encoder.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+A new version of the following files was downloaded from https://huggingface.co/q-future/Compare2Score:
+- modeling_mplug_owl2.py
+- modeling_attn_mask_utils.py
+- modeling_llama2.py
+- visual_encoder.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards:  25%|██▌       | 1/4 [00:06<00:19,  6.54s/it]Downloading shards:  50%|█████     | 2/4 [00:12<00:12,  6.12s/it]
