@@ -1,0 +1,36 @@
+Running dataset=tid2013 data_root=/local/data/b-s-farrahi phase=test
+Loading dataset tid2013 with phase='test', split_index='ratio622_seed123_split_01' from /local/data/b-s-farrahi...
+Loading dataset tid2013 from /local/data/b-s-farrahi ...
+Downloading all metadata files to /local/data/b-s-farrahi/meta_info.
+Returning existing local_dir `/local/data/b-s-farrahi/meta_info` as remote repo cannot be accessed in `snapshot_download` (Cannot reach https://huggingface.co/api/datasets/chaofengc/IQA-PyTorch-Datasets-metainfo/revision/main: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.).
+Downloading dataset tid2013 to /local/data/b-s-farrahi/tid2013.tgz
+Returning existing local_dir `/local/data/b-s-farrahi` as remote repo cannot be accessed in `snapshot_download` (Cannot reach https://huggingface.co/api/datasets/chaofengc/IQA-PyTorch-Datasets/revision/main: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.).
+Error extracting archive: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/tid2013.tgz'
+Traceback (most recent call last):
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 168, in <module>
+    main()
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 78, in main
+    df = load_labels_df(
+  File "/local/code/pyiqa_pipeline/pyiqa_utils.py", line 52, in load_labels_df
+    ds = pyiqa.load_dataset(dataset, data_root=data_root_path, dataset_opts=dataset_opts)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/data/dataset_api.py", line 175, in load_dataset
+    dataset = build_dataset(dataset_info)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/data/__init__.py", line 41, in build_dataset
+    dataset = DATASET_REGISTRY.get(dataset_opt['type'])(dataset_opt)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/data/base_iqa_dataset.py", line 33, in __init__
+    self.init_path_mos(opt)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/data/general_fr_dataset.py", line 19, in init_path_mos
+    super().init_path_mos(opt)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/data/base_iqa_dataset.py", line 45, in init_path_mos
+    self.meta_info = pd.read_csv(opt['meta_info_file'])
+  File "/opt/conda/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/opt/conda/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/opt/conda/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/meta_info_TID2013Dataset.csv'

@@ -1,0 +1,164 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iqa-run-experts-all-datasets
+  namespace: b-s-farrahi
+spec:
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsUser: 0
+        fsGroup: 1026
+      tolerations:
+      - key: dgx
+        operator: Equal
+        value: access
+        effect: NoSchedule
+      containers:
+      - name: iqa
+        image: ws.ab/b-s-farrahi/iqa-pyiqa:0.3
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: TORCH_HOME
+          value: /pip-cache/torch
+        - name: HF_HOME
+          value: /pip-cache/hf
+        - name: TRANSFORMERS_CACHE
+          value: /pip-cache/hf/transformers
+        - name: TRANSFORMERS_OFFLINE
+          value: "1"
+        - name: HF_DATASETS_CACHE
+          value: /pip-cache/hf/datasets
+        - name: HF_DATASETS_OFFLINE
+          value: "1"
+        - name: HF_HUB_DISABLE_TELEMETRY
+          value: "1"
+        - name: HF_HUB_OFFLINE
+          value: "1"
+        - name: HF_HUB_DISABLE_PROGRESS_BARS
+          value: "1"
+        - name: TRANSFORMERS_VERBOSITY
+          value: "error"
+        - name: TRITON_CACHE_DIR
+          value: /pip-cache/triton
+        - name: PIP_CACHE_DIR
+          value: /pip-cache/pip
+        - name: PIP_DISABLE_PIP_VERSION_CHECK
+          value: "1"
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: DATASETS
+          value: "tid2013,livec,koniq10k,spaq"
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+            cpu: "18"
+            memory: "35Gi"
+          requests:
+            nvidia.com/gpu: 1
+            cpu: "18"
+            memory: "35Gi"
+        command: ["/bin/bash","-lc"]
+        args:
+        - |
+          set -euo pipefail
+          umask 0002
+          nvidia-smi || true
+
+          LOG_DIR="/local/outputs/logs"
+          mkdir -p "$LOG_DIR"
+          LOG_TS=$(date +%Y%m%d_%H%M%S)
+          POD_NAME=${HOSTNAME:-pod}
+          LOG_FILE="$LOG_DIR/iqa-run-experts-all-datasets_${POD_NAME}_${LOG_TS}.log"
+          exec > >(tee -a "$LOG_FILE") 2>&1
+
+          cd /local/code
+
+          EXPERTS_JSON="/local/code/configs/experts.json"
+          OUT_ROOT="/local/outputs/preds"
+
+          IFS=',' read -ra DS_ARR <<< "${DATASETS}"
+          for DS in "${DS_ARR[@]}"; do
+            DS_TRIM=$(echo "$DS" | xargs)
+            if [[ -z "$DS_TRIM" ]]; then
+              continue
+            fi
+
+            DATA_ROOT="/local/data/b-s-farrahi"
+
+            SPLIT_INDEX=""
+            DS_PHASE="${PHASE:-test}"
+            case "${DS_TRIM}" in
+              koniq10k)
+                SPLIT_INDEX="official_split"
+                DS_PHASE="test"
+                ;;
+              spaq|livec)
+                SPLIT_INDEX="ratio802_seed123_split_01"
+                DS_PHASE="val"
+                ;;
+              tid2013)
+                SPLIT_INDEX="ratio622_seed123_split_01"
+                DS_PHASE="test"
+                ;;
+              *)
+                SPLIT_INDEX=""
+                ;;
+            esac
+
+            OUT_DIR="${OUT_ROOT}/${DS_TRIM}/${DS_PHASE}"
+            mkdir -p "$OUT_DIR"
+
+            echo "Running dataset=${DS_TRIM} data_root=${DATA_ROOT} phase=${DS_PHASE}"
+            python -u pyiqa_pipeline/02_run_experts_pyiqa.py \
+              --dataset "$DS_TRIM" \
+              --data-root "$DATA_ROOT" \
+              --phase "$DS_PHASE" \
+              --split-index "$SPLIT_INDEX" \
+              --experts-json "$EXPERTS_JSON" \
+              --device "cuda" \
+              --output-dir "$OUT_DIR" \
+              --progress-every 200 \
+              --warmup 5 \
+              --resume
+          done
+
+          P="/local/outputs"
+          chgrp 1026 "$P" || true
+          chmod g+rx "$P" || true
+          chgrp -R 1026 "$P" || true
+          chmod -R g+rwX "$P" || true
+        volumeMounts:
+        - mountPath: /local/data
+          name: data
+        - mountPath: /local/data2
+          name: data2
+        - mountPath: /local/code
+          name: code
+        - mountPath: /local/outputs
+          name: outputs
+        - mountPath: /pip-cache
+          name: pip-cache
+      volumes:
+      - name: data
+        hostPath:
+          path: /shared/hdd/data
+          type: Directory
+      - name: data2
+        hostPath:
+          path: /shared/hdd/data
+          type: Directory
+      - name: code
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2
+          type: Directory
+      - name: outputs
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2/outputs
+          type: DirectoryOrCreate
+      - name: pip-cache
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/pip-cache
+          type: DirectoryOrCreate

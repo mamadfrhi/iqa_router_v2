@@ -1,0 +1,203 @@
+Running dataset=livec data_root=/local/data/b-s-farrahi phase=test
+Loading dataset livec from /local/data/b-s-farrahi ...
+/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
+  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
+Warmup done with 5 iterations on first image.
+Gonna run expert arniqa on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_arniqa.csv
+/opt/conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 4/4 [00:00<00:00, 434.24it/s]
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Using the latest cached version of the dataset since VQA-CityU/Anchor_images couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /pip-cache/hf/datasets/VQA-CityU___anchor_images/default/0.0.0/60ba574874d01e2f1bee0e8afe8e2cb187ede13e (last modified on Mon Feb  9 22:25:47 2026).
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.24s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.21s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.20s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.81s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.96s/it]
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+Warmup done with 5 iterations on first image.
+Gonna run expert compare2score on 1161 images of dataset livec phase test split 
+Resuming with done=9 images already processed)...
+compare2score: 200/1161 processed
+compare2score: 400/1161 processed
+compare2score: 600/1161 processed
+compare2score: 800/1161 processed
+compare2score: 1000/1161 processed
+compare2score: 1161/1161 processed
+Saved 1152 rows to /local/outputs/preds/livec/test/preds_compare2score.csv
+Loading pretrained model QualiCLIP from /pip-cache/torch/hub/pyiqa/QualiCLIP%2B_koniq.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert qualiclip+ on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_qualiclip+.csv
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1268.69it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.14s/it]
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+Warmup done with 5 iterations on first image.
+Gonna run expert qalign on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_qalign.csv
+Warmup done with 5 iterations on first image.
+Gonna run expert clipiqa+ on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_clipiqa+.csv
+/opt/conda/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Loading pretrained model MANIQA from /pip-cache/torch/hub/pyiqa/ckpt_koniq10k.pt
+Warmup done with 5 iterations on first image.
+Gonna run expert maniqa on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_maniqa.csv
+Loading pretrained model MUSIQ from /pip-cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert musiq on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_musiq.csv
+Loading pretrained model CFANet from /pip-cache/torch/hub/pyiqa/cfanet_nr_koniq_res50-9a73138b.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert topiq_nr on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_topiq_nr.csv
+Loading pretrained model TReS from /pip-cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert tres on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_tres.csv
+Loading pretrained model LIQE from /pip-cache/torch/hub/pyiqa/liqe_koniq.pt
+Warmup done with 5 iterations on first image.
+Gonna run expert liqe on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_liqe.csv
+Loading pretrained model HyperNet from /pip-cache/torch/hub/pyiqa/HyperIQA-resnet50-koniq10k-c96c41b1.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert hyperiqa on 1161 images of dataset livec phase test split 
+Resuming with done=1152 images already processed)...
+Saved 9 rows to /local/outputs/preds/livec/test/preds_hyperiqa.csv
+Running dataset=koniq10k data_root=/local/data/b-s-farrahi phase=test
+Loading dataset koniq10k from /local/data/b-s-farrahi ...
+/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
+  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
+Warmup done with 5 iterations on first image.
+Gonna run expert arniqa on 2015 images of dataset koniq10k phase test split 
+Resuming with done=10 images already processed)...
+arniqa: 200/2015 processed
+arniqa: 400/2015 processed
+arniqa: 600/2015 processed
+arniqa: 800/2015 processed
+arniqa: 1000/2015 processed
+arniqa: 1200/2015 processed
+arniqa: 1400/2015 processed
+arniqa: 1600/2015 processed
+arniqa: 1800/2015 processed
+arniqa: 2000/2015 processed
+arniqa: 2015/2015 processed
+Saved 2005 rows to /local/outputs/preds/koniq10k/test/preds_arniqa.csv
+/opt/conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 4/4 [00:00<00:00, 2051.00it/s]
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Using the latest cached version of the dataset since VQA-CityU/Anchor_images couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /pip-cache/hf/datasets/VQA-CityU___anchor_images/default/0.0.0/60ba574874d01e2f1bee0e8afe8e2cb187ede13e (last modified on Mon Feb  9 22:25:47 2026).
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:07,  2.44s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.40s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.46s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  1.96s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  2.13s/it]
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+Warmup done with 5 iterations on first image.
+Gonna run expert compare2score on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_compare2score.csv
+Loading pretrained model QualiCLIP from /pip-cache/torch/hub/pyiqa/QualiCLIP%2B_koniq.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert qualiclip+ on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_qualiclip+.csv
+/opt/conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1945.41it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.11s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.17s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.31s/it]
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:392: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:397: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.
+  warnings.warn(
+Warmup done with 5 iterations on first image.
+Gonna run expert qalign on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_qalign.csv
+Warmup done with 5 iterations on first image.
+Gonna run expert clipiqa+ on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_clipiqa+.csv
+/opt/conda/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Loading pretrained model MANIQA from /pip-cache/torch/hub/pyiqa/ckpt_koniq10k.pt
+Warmup done with 5 iterations on first image.
+Gonna run expert maniqa on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_maniqa.csv
+Loading pretrained model MUSIQ from /pip-cache/torch/hub/pyiqa/musiq_koniq_ckpt-e95806b9.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert musiq on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_musiq.csv
+Loading pretrained model CFANet from /pip-cache/torch/hub/pyiqa/cfanet_nr_koniq_res50-9a73138b.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert topiq_nr on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_topiq_nr.csv
+Loading pretrained model TReS from /pip-cache/torch/hub/pyiqa/tres_koniq-f0502926.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert tres on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_tres.csv
+Loading pretrained model LIQE from /pip-cache/torch/hub/pyiqa/liqe_koniq.pt
+Warmup done with 5 iterations on first image.
+Gonna run expert liqe on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_liqe.csv
+Loading pretrained model HyperNet from /pip-cache/torch/hub/pyiqa/HyperIQA-resnet50-koniq10k-c96c41b1.pth
+Warmup done with 5 iterations on first image.
+Gonna run expert hyperiqa on 2015 images of dataset koniq10k phase test split 
+Resuming with done=2005 images already processed)...
+Saved 10 rows to /local/outputs/preds/koniq10k/test/preds_hyperiqa.csv
+Running dataset=tid2013 data_root=/local/data/b-s-farrahi phase=test
+Loading dataset tid2013 from /local/data/b-s-farrahi ...
+Downloading dataset tid2013 to /local/data/b-s-farrahi/tid2013.tgz
+Returning existing local_dir `/local/data/b-s-farrahi` as remote repo cannot be accessed in `snapshot_download` (Cannot reach https://huggingface.co/api/datasets/chaofengc/IQA-PyTorch-Datasets/revision/main: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.).
+Error extracting archive: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/tid2013.tgz'
+/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
+  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
+Warmup failed: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/tid2013/distorted_images/I01_01_1.bmp'
+Gonna run expert arniqa on 3000 images of dataset tid2013 phase test split 
+Resuming with done=0 images already processed)...
+Traceback (most recent call last):
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 154, in <module>
+    main()
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 133, in main
+    y = model(img_path)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/models/inference_model.py", line 99, in forward
+    target = imread2tensor(target, rgb=True)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 60, in imread2tensor
+    img = imread2pil(img_source, rgb)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 43, in imread2pil
+    img = Image.open(img_source)
+  File "/opt/conda/lib/python3.10/site-packages/PIL/Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/local/data/b-s-farrahi/tid2013/distorted_images/I01_01_1.bmp'

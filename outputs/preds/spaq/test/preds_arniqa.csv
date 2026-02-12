@@ -1,0 +1,11 @@
+image_path,raw_score,latency_ms
+/local/data/b-s-farrahi/SPAQ/TestImage/00001.jpg,0.3483468294143677,582.384727022145
+/local/data/b-s-farrahi/SPAQ/TestImage/00002.jpg,0.3403490483760834,931.4863029867411
+/local/data/b-s-farrahi/SPAQ/TestImage/00003.jpg,0.42846596240997314,626.1089739855379
+/local/data/b-s-farrahi/SPAQ/TestImage/00004.jpg,0.4165116846561432,602.9312600148842
+/local/data/b-s-farrahi/SPAQ/TestImage/00005.jpg,0.27466386556625366,596.8412820366211
+/local/data/b-s-farrahi/SPAQ/TestImage/00006.jpg,0.4034547209739685,597.3887500003912
+/local/data/b-s-farrahi/SPAQ/TestImage/00007.jpg,0.5601556301116943,545.3224180382676
+/local/data/b-s-farrahi/SPAQ/TestImage/00008.jpg,0.33248311281204224,497.16370803071186
+/local/data/b-s-farrahi/SPAQ/TestImage/00009.jpg,0.2862890362739563,449.3146590539254
+/local/data/b-s-farrahi/SPAQ/TestImage/00010.jpg,0.3573434352874756,555.0979329855181

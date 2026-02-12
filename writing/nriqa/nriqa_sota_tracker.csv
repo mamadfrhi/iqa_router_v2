@@ -1,0 +1,162 @@
+source,title,venue,year,cvf_page,pdf_link,arxiv_link,datasets,metrics,reported_scores,notes
+CVF,Blind Image Quality Assessment Based on Geometric Order Learning,CVPR,2024,https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Blind_Image_Quality_Assessment_Based_on_Geometric_Order_Learning_CVPR_2024_paper.html,https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Blind_Image_Quality_Assessment_Based_on_Geometric_Order_Learning_CVPR_2024_paper.pdf,,,,,
+CVF,Boosting Image Quality Assessment through Efficient Transformer Adaptation with Local Feature Enhancement,CVPR,2024,https://openaccess.thecvf.com/content/CVPR2024/html/Xu_Boosting_Image_Quality_Assessment_through_Efficient_Transformer_Adaptation_with_Local_CVPR_2024_paper.html,https://openaccess.thecvf.com/content/CVPR2024/html/Xu_Boosting_Image_Quality_Assessment_through_Efficient_Transformer_Adaptation_with_Local_CVPR_2024_paper.pdf,,,,,
+CVF,Bridging the Synthetic-to-Authentic Gap: Distortion-Guided Unsupervised Domain Adaptation for Blind Image Quality Assessment,CVPR,2024,https://openaccess.thecvf.com/content/CVPR2024/html/Li_Bridging_the_Synthetic-to-Authentic_Gap_Distortion-Guided_Unsupervised_Domain_Adaptation_for_Blind_CVPR_2024_paper.html,https://openaccess.thecvf.com/content/CVPR2024/html/Li_Bridging_the_Synthetic-to-Authentic_Gap_Distortion-Guided_Unsupervised_Domain_Adaptation_for_Blind_CVPR_2024_paper.pdf,,KonIQ-10k; KADID-10k; LIVE; AVA,SRCC; PLCC,"SRCC: 0.5646; PLCC: 0.6958, 0.4756, 0.2433",auto-parsed
+CVF,Defense Against Adversarial Attacks on No-Reference Image Quality Models with Gradient Norm Regularization,CVPR,2024,https://openaccess.thecvf.com/content/CVPR2024/html/Liu_Defense_Against_Adversarial_Attacks_on_No-Reference_Image_Quality_Models_with_CVPR_2024_paper.html,https://openaccess.thecvf.com/content/CVPR2024/html/Liu_Defense_Against_Adversarial_Attacks_on_No-Reference_Image_Quality_Models_with_CVPR_2024_paper.pdf,,,,,
+CVF,Few-Shot Image Quality Assessment via Adaptation of Vision-Language Models,ICCV,2025,https://openaccess.thecvf.com/content/ICCV2025/html/Li_Few-Shot_Image_Quality_Assessment_via_Adaptation_of_Vision-Language_Models_ICCV_2025_paper.html,https://openaccess.thecvf.com/content/ICCV2025/html/Li_Few-Shot_Image_Quality_Assessment_via_Adaptation_of_Vision-Language_Models_ICCV_2025_paper.pdf,,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; TID2013; AVA,SRCC; PLCC,"PLCC: 0.858, 0.825, 0.579",auto-parsed
+CVF,IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models,ICCV,2025,https://openaccess.thecvf.com/content/ICCV2025/html/Abud_IQA-Adapter_Exploring_Knowledge_Transfer_from_Image_Quality_Assessment_to_Diffusion-based_ICCV_2025_paper.html,https://openaccess.thecvf.com/content/ICCV2025/html/Abud_IQA-Adapter_Exploring_Knowledge_Transfer_from_Image_Quality_Assessment_to_Diffusion-based_ICCV_2025_paper.pdf,,KonIQ-10k; KADID-10k; LIVE; AVA,SRCC,,auto-parsed
+arXiv,AI-generated Image Quality Assessment in Visual Communication,arXiv,2024,,,https://arxiv.org/abs/2412.15677,,,,
+arXiv,AIM 2024 Challenge on UHD Blind Photo Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2409.16271,,,,
+arXiv,Adaptive Image Quality Assessment via Teaching Large Multimodal Model to Compare,arXiv,2024,,,https://arxiv.org/abs/2405.19298,,,,
+arXiv,"Assessing UHD Image Quality from Aesthetics, Distortions, and Saliency",arXiv,2024,,,https://arxiv.org/abs/2409.00749,,,,
+arXiv,"Attention Down-Sampling Transformer, Relative Ranking and Self-Consistency for Blind Image Quality Assessment",arXiv,2024,,,https://arxiv.org/abs/2409.07115,,,,
+arXiv,Backdoor Attacks against No-Reference Image Quality Assessment Models via a Scalable Trigger,arXiv,2024,,,https://arxiv.org/abs/2412.07277,,,,
+arXiv,CLIP-AGIQA: Boosting the Performance of AI-Generated Image Quality Assessment with CLIP,arXiv,2024,,,https://arxiv.org/abs/2408.15098,,,,
+arXiv,Contrastive Local Manifold Learning for No-Reference Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2406.19247,,,,
+arXiv,Cross-IQA: Unsupervised Learning for Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2405.04311,,,,
+arXiv,DP-IQA: Utilizing Diffusion Prior for Blind Image Quality Assessment in the Wild,arXiv,2024,,,https://arxiv.org/abs/2405.19996,,,,
+arXiv,DSMix: Distortion-Induced Sensitivity Map Based Pre-training for No-Reference Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2407.03886,,,,
+arXiv,Dog-IQA: Standard-guided Zero-shot MLLM for Mix-grained Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2410.02505,,,,
+arXiv,Embedding-Driven Data Distillation for 360-Degree IQA With Residual-Aware Refinement,arXiv,2024,,,https://arxiv.org/abs/2412.12667,,,,
+arXiv,Embodied Image Quality Assessment for Robotic Intelligence,arXiv,2024,,,https://arxiv.org/abs/2412.18774,,,,
+arXiv,Enhancing Content Representation for AR Image Quality Assessment Using Knowledge Distillation,arXiv,2024,,,https://arxiv.org/abs/2412.06003,,,,
+arXiv,Enhancing Descriptive Image Quality Assessment with A Large-scale Multi-modal Dataset,arXiv,2024,,,https://arxiv.org/abs/2405.18842,,,,
+arXiv,Evaluating BM3D and NBNet: A Comprehensive Study of Image Denoising Across Multiple Datasets,arXiv,2024,,,https://arxiv.org/abs/2408.05697,,,,
+arXiv,FRAP: Faithful and Realistic Text-to-Image Generation with Adaptive Prompt Weighting,arXiv,2024,,,https://arxiv.org/abs/2408.11706,,,,
+arXiv,Few-Shot Image Quality Assessment via Adaptation of Vision-Language Models,arXiv,2024,,,https://arxiv.org/abs/2409.05381,,,,
+arXiv,Foundation Models Boost Low-Level Perceptual Similarity Metrics,arXiv,2024,,,https://arxiv.org/abs/2409.07650,,,,
+arXiv,Grounding-IQA: Grounding Multimodal Language Model for Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2411.17237,,,,
+arXiv,IQA-Adapter: Exploring Knowledge Transfer from Image Quality Assessment to Diffusion-based Generative Models,arXiv,2024,,,https://arxiv.org/abs/2412.01794,,,,
+arXiv,ITI-IQA: a Toolbox for Heterogeneous Univariate and Multivariate Missing Data Imputation Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2407.11767,,,,
+arXiv,Image Quality Assessment: Enhancing Perceptual Exploration and Interpretation with Collaborative Feature Refinement and Hausdorff distance,arXiv,2024,,,https://arxiv.org/abs/2412.15847,,,,
+arXiv,Intensity-sensitive quality assessment of extended sources in astronomical images,arXiv,2024,,,https://arxiv.org/abs/2407.07863,,,,
+arXiv,"LAR-IQA: A Lightweight, Accurate, and Robust No-Reference Image Quality Assessment Model",arXiv,2024,,,https://arxiv.org/abs/2408.17057,,,,
+arXiv,LL-ICM: Image Compression for Low-level Machine Vision via Large Vision-Language Model,arXiv,2024,,,https://arxiv.org/abs/2412.03841,,,,
+arXiv,Light Field Image Quality Assessment With Auxiliary Learning Based on Depthwise and Anglewise Separable Convolutions,arXiv,2024,,,https://arxiv.org/abs/2412.07079,,,,
+arXiv,MSLIQA: Enhancing Learning Representations for Image Quality Assessment through Multi-Scale Learning,arXiv,2024,,,https://arxiv.org/abs/2408.16879,,,,
+arXiv,Mitigating Perception Bias: A Training-Free Approach to Enhance LMM for Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2411.12791,,,,
+arXiv,MobileIQA: Exploiting Mobile-level Diverse Opinion Network For No-Reference Image Quality Assessment Using Knowledge Distillation,arXiv,2024,,,https://arxiv.org/abs/2409.01212,,,,
+arXiv,Multi-task Feature Enhancement Network for No-Reference Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2411.07556,,,,
+arXiv,PIGUIQA: A Physical Imaging Guided Perceptual Framework for Underwater Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2412.15527,,,,
+arXiv,Parametric PerceptNet: A bio-inspired deep-net trained for Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2412.03210,,,,
+arXiv,Perception- and Fidelity-aware Reduced-Reference Super-Resolution Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2405.09472,,,,
+arXiv,Q-Ground: Image Quality Grounding with Large Multi-modality Models,arXiv,2024,,,https://arxiv.org/abs/2407.17035,,,,
+arXiv,QMamba: On First Exploration of Vision Mamba for Image Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2406.09546,,,,
+arXiv,Quantitative and Qualitative Evaluation of NLM and Wavelet Methods in Image Enhancement,arXiv,2024,,,https://arxiv.org/abs/2409.14334,,,,
+arXiv,Ranking-aware adapter for text-driven image ordering with CLIP,arXiv,2024,,,https://arxiv.org/abs/2412.06760,,,,
+arXiv,Shared Imagination: LLMs Hallucinate Alike,arXiv,2024,,,https://arxiv.org/abs/2407.16604,,,,
+arXiv,Sliced Maximal Information Coefficient: A Training-Free Approach for Image Quality Assessment Enhancement,arXiv,2024,,,https://arxiv.org/abs/2408.09920,,,,
+arXiv,UHD-IQA Benchmark Database: Pushing the Boundaries of Blind Photo Quality Assessment,arXiv,2024,,,https://arxiv.org/abs/2406.17472,,,,
+arXiv,UniQA: Unified Vision-Language Pre-training for Image Quality and Aesthetic Assessment,arXiv,2024,,,https://arxiv.org/abs/2406.01069,,,,
+arXiv,"Vision Language Modeling of Content, Distortion and Appearance for Image Quality Assessment",arXiv,2024,,,https://arxiv.org/abs/2406.09858,,,,
+arXiv,Visual question answering based evaluation metrics for text-to-image generation,arXiv,2024,,,https://arxiv.org/abs/2411.10183,,,,
+arXiv,X-Fake: Juggling Utility Evaluation and Explanation of Simulated SAR Images,arXiv,2024,,,https://arxiv.org/abs/2407.19436,,,,
+arXiv,3DGS-IEval-15K: A Large-scale Image Quality Evaluation Database for 3D Gaussian-Splatting,arXiv,2025,,,https://arxiv.org/abs/2506.14642,LIVE; AVA,SRCC; PLCC; KRCC,"SRCC: 0.93, 0.7327",auto-parsed
+arXiv,4KAgent: Agentic Any Image to 4K Super-Resolution,arXiv,2025,,,https://arxiv.org/abs/2507.07105,AVA,,,auto-parsed
+arXiv,A Causal Framework for Aligning Image Quality Metrics and Deep Neural Network Robustness,arXiv,2025,,,https://arxiv.org/abs/2503.02797,AVA,SRCC; PLCC; KRCC,,auto-parsed
+arXiv,A Hybrid Approach for Unified Image Quality Assessment: Permutation Entropy-Based Features Fused with Random Forest for Natural-Scene and Screen-Content Images for Cross-Content Applications,arXiv,2025,,,https://arxiv.org/abs/2508.17351,LIVE; AVA,SRCC; PLCC; KRCC,,auto-parsed
+arXiv,"A Survey on Image Quality Assessment: Insights, Analysis, and Future Outlook",arXiv,2025,,,https://arxiv.org/abs/2502.08540,LIVE; AVA,,,auto-parsed
+arXiv,AU-IQA: A Benchmark Dataset for Perceptual Quality Assessment of AI-Enhanced User-Generated Content,arXiv,2025,,,https://arxiv.org/abs/2508.05016,KonIQ-10k; KADID-10k; TID2013; AVA,SRCC; PLCC,,auto-parsed
+arXiv,Accelerate High-Quality Diffusion Models with Inner Loop Feedback,arXiv,2025,,,https://arxiv.org/abs/2501.13107,LIVE; AVA,,,auto-parsed
+arXiv,AgenticIQA: An Agentic Framework for Adaptive and Interpretable Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2509.26006,LIVE; TID2013; AVA,SRCC; PLCC,,auto-parsed
+arXiv,An Open Research Dataset of the 1932 Cairo Congress of Arab Music,arXiv,2025,,,https://arxiv.org/abs/2506.14503,AVA,,,auto-parsed
+arXiv,Annotation-Free Human Sketch Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.20548,LIVE; AVA,KRCC,,auto-parsed
+arXiv,BELE: Blur Equivalent Linearized Estimator,arXiv,2025,,,https://arxiv.org/abs/2503.00503,KADID-10k; LIVE; CSIQ; TID2013,SRCC; PLCC,SRCC: 0.9548; PLCC: 0.9513,auto-parsed
+arXiv,BPCLIP: A Bottom-up Image Quality Assessment from Distortion to Semantics Based on CLIP,arXiv,2025,,,https://arxiv.org/abs/2506.17969,KonIQ-10k; SPAQ; KADID-10k; CLIVE; LIVE; CSIQ; TID2013; AVA,SRCC; PLCC,"SRCC: 0.865, 0.589; PLCC: 0.953, 0.612",auto-parsed
+arXiv,Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2511.09948,KonIQ-10k; SPAQ; KADID-10k; CLIVE; LIVE; CSIQ; TID2013; AVA,SRCC; PLCC,"SRCC: 0.765, 0.764, 0.599; PLCC: 0.706, 0.702, 0.568",auto-parsed
+arXiv,Biology-driven assessment of deep learning super-resolution imaging of the porosity network in dentin,arXiv,2025,,,https://arxiv.org/abs/2510.08407,AVA,,,auto-parsed
+arXiv,Building Reasonable Inference for Vision-Language Models in Blind Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2512.09555,KonIQ-10k; SPAQ; LIVE; CSIQ; AVA,SRCC; PLCC,,auto-parsed
+arXiv,Burst Image Quality Assessment: A New Benchmark and Unified Framework for Multiple Downstream Tasks,arXiv,2025,,,https://arxiv.org/abs/2511.07958,SPAQ,SRCC; PLCC,"SRCC: 0.343, 0.175",auto-parsed
+arXiv,CAS-IQA: Teaching Vision-Language Models for Synthetic Angiography Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2505.17619,KonIQ-10k; SPAQ; AVA,SRCC; PLCC,,auto-parsed
+arXiv,CDI: Blind Image Restoration Fidelity Evaluation based on Consistency with Degraded Image,arXiv,2025,,,https://arxiv.org/abs/2501.14264,LIVE; CSIQ; TID2013; AVA,,,auto-parsed
+arXiv,Computational Analysis of Degradation Modeling in Blind Panoramic Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2503.03255,KonIQ-10k; LIVE; AVA,PLCC,,auto-parsed
+arXiv,Cost Savings from Automatic Quality Assessment of Generated Images,arXiv,2025,,,https://arxiv.org/abs/2510.16179,LIVE; AVA,,,auto-parsed
+arXiv,Counting with Confidence: Accurate Pest Monitoring in Water Traps,arXiv,2025,,,https://arxiv.org/abs/2506.22438,AVA,,,auto-parsed
+arXiv,Cross-Domain Underwater Image Enhancement Guided by No-Reference Image Quality Assessment: A Transfer Learning Approach,arXiv,2025,,,https://arxiv.org/abs/2503.17937,KonIQ-10k; LIVE,PLCC,,auto-parsed
+arXiv,DEAR: Dataset for Evaluating the Aesthetics of Rendering,arXiv,2025,,,https://arxiv.org/abs/2512.05209,KonIQ-10k; KADID-10k; LIVE; CSIQ; TID2013; AVA,SRCC,,auto-parsed
+arXiv,DEFNet: Multitasks-based Deep Evidential Fusion Network for Blind Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.19418,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; TID2013,SRCC; PLCC,"SRCC: 0.828, 0.464",auto-parsed
+arXiv,DGIQA: Depth-guided Feature Attention and Refinement for Generalizable Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2505.24002,KonIQ-10k; KADID-10k; CLIVE; LIVE; CSIQ; TID2013; AVA,SRCC; PLCC,,auto-parsed
+arXiv,DeQA-Doc: Adapting DeQA-Score to Document Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.12796,KonIQ-10k; SPAQ; KADID-10k; AVA,SRCC; PLCC,,auto-parsed
+arXiv,Describe-to-Score: Text-Guided Efficient Image Complexity Assessment,arXiv,2025,,,https://arxiv.org/abs/2509.16609,KonIQ-10k; KADID-10k; LIVE; TID2013; AVA,SRCC; PLCC,"SRCC: 0.959, 0.9541, 0.9509; PLCC: 0.9576",auto-parsed
+arXiv,DocIQ: A Benchmark Dataset and Feature Fusion Network for Document Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2509.17012,KonIQ-10k; CLIVE; LIVE; CSIQ; AVA,SRCC; PLCC,"SRCC: 0.9086, 0.8989, 0.8704; PLCC: 0.8999",auto-parsed
+arXiv,Don't Judge Before You CLIP: A Unified Approach for Perceptual Tasks,arXiv,2025,,,https://arxiv.org/abs/2503.13260,KonIQ-10k; SPAQ; KADID-10k; LIVE; TID2013,SRCC; PLCC,"SRCC: 0.943, 0.640",auto-parsed
+arXiv,EZ-Sort: Efficient Pairwise Comparison via Zero-Shot CLIP-Based Pre-Ordering and Human-in-the-Loop Sorting,arXiv,2025,,,https://arxiv.org/abs/2508.21550,AVA,SRCC; PLCC; KRCC,,auto-parsed
+arXiv,Enhanced Dermatology Image Quality Assessment via Cross-Domain Training,arXiv,2025,,,https://arxiv.org/abs/2506.16116,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; TID2013; AVA,SRCC; PLCC,,auto-parsed
+arXiv,Enhancing Diffusion-based Restoration Models via Difficulty-Adaptive Reinforcement Learning with IQA Reward,arXiv,2025,,,https://arxiv.org/abs/2511.01645,,,,
+arXiv,Enhancing Underwater Images via Deep Learning: A Comparative Study of VGG19 and ResNet50-Based Approaches,arXiv,2025,,,https://arxiv.org/abs/2508.17397,AVA,,,auto-parsed
+arXiv,Exploring Semantic Feature Discrimination for Perceptual Image Super-Resolution and Opinion-Unaware No-Reference Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2503.19295,KonIQ-10k; LIVE; AVA,SRCC; PLCC; KRCC,,auto-parsed
+arXiv,FS-IQA: Certified Feature Smoothing for Robust Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2508.05516,KonIQ-10k; KADID-10k; LIVE; AVA,SRCC; PLCC,,auto-parsed
+arXiv,FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution,arXiv,2025,,,https://arxiv.org/abs/2512.22647,LIVE; AVA,,,auto-parsed
+arXiv,Fine-Grained HDR Image Quality Assessment From Noticeably Distorted to Very High Fidelity,arXiv,2025,,,https://arxiv.org/abs/2506.12505,LIVE; AVA,SRCC; PLCC,PLCC: 0.587,auto-parsed
+arXiv,Fine-grained Image Quality Assessment for Perceptual Image Restoration,arXiv,2025,,,https://arxiv.org/abs/2508.14475,KADID-10k; AVA,SRCC; PLCC,"SRCC: 0.323, 0.187; PLCC: 0.280",auto-parsed
+arXiv,GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-guided Latent Diffusion Model?,arXiv,2025,,,https://arxiv.org/abs/2510.26339,LIVE; AVA,,,auto-parsed
+arXiv,Guiding Perception-Reasoning Closer to Human in Blind Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2512.16484,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; AVA,SRCC; PLCC,PLCC: 0.041,auto-parsed
+arXiv,Hallucinating 360°: Panoramic Street-View Generation via Local Scenes Diffusion and Probabilistic Prompting,arXiv,2025,,,https://arxiv.org/abs/2507.06971,LIVE; AVA,,,auto-parsed
+arXiv,HarmonyIQA: Pioneering Benchmark and Model for Image Harmonization Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2501.01116,,,,
+arXiv,HiLLIE: Human-in-the-Loop Training for Low-Light Image Enhancement,arXiv,2025,,,https://arxiv.org/abs/2505.02134,,,,
+arXiv,HiRQA: Hierarchical Ranking and Quality Alignment for Opinion-Unaware Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2508.15130,,,,
+arXiv,Hierarchical Fusion and Joint Aggregation: A Multi-Level Feature Representation Method for AIGC Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.17182,,,,
+arXiv,Hybrid Image Resolution Quality Metric (HIRQM):A Comprehensive Perceptual Image Quality Assessment Framework,arXiv,2025,,,https://arxiv.org/abs/2505.02001,,,,
+arXiv,IE-Bench: Advancing the Measurement of Text-Driven Image Editing for Human Perception Alignment,arXiv,2025,,,https://arxiv.org/abs/2501.09927,,,,
+arXiv,Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution,arXiv,2025,,,https://arxiv.org/abs/2502.06476,,,,
+arXiv,Image Quality Assessment for Embodied AI,arXiv,2025,,,https://arxiv.org/abs/2505.16815,,,,
+arXiv,"Image Quality Assessment for Machines: Paradigm, Large-scale Database, and Models",arXiv,2025,,,https://arxiv.org/abs/2508.19850,,,,
+arXiv,Image Quality Assessment: From Human to Machine Preference,arXiv,2025,,,https://arxiv.org/abs/2503.10078,,,,
+arXiv,Images Speak Louder Than Scores: Failure Mode Escape for Enhancing Generative Quality,arXiv,2025,,,https://arxiv.org/abs/2508.09598,,,,
+arXiv,Investigate the Low-level Visual Perception in Vision-Language based Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2512.09573,,,,
+arXiv,Language-Guided Visual Perception Disentanglement for Image Quality Assessment and Conditional Image Generation,arXiv,2025,,,https://arxiv.org/abs/2503.02206,,,,
+arXiv,Latent Guidance in Diffusion Models for Perceptual Evaluations,arXiv,2025,,,https://arxiv.org/abs/2506.00327,,,,
+arXiv,MDIQA: Unified Image Quality Assessment for Multi-dimensional Evaluation and Restoration,arXiv,2025,,,https://arxiv.org/abs/2508.16887,,,,
+arXiv,MILO: A Lightweight Perceptual Quality Metric for Image and Latent-Space Optimization,arXiv,2025,,,https://arxiv.org/abs/2509.01411,,,,
+arXiv,MMP-2K: A Benchmark Multi-Labeled Macro Photography Image Quality Assessment Database,arXiv,2025,,,https://arxiv.org/abs/2505.19065,,,,
+arXiv,MetaQAP - A Meta-Learning Approach for Quality-Aware Pretraining in Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2506.16601,,,,
+arXiv,Metric for Evaluating Performance of Reference-Free Demorphing Methods,arXiv,2025,,,https://arxiv.org/abs/2501.12319,,,,
+arXiv,"Mitigating Low-Level Visual Hallucinations Requires Self-Awareness: Database, Model and Training Strategy",arXiv,2025,,,https://arxiv.org/abs/2503.20673,,,,
+arXiv,No-Reference Image Contrast Assessment with Customized EfficientNet-B0,arXiv,2025,,,https://arxiv.org/abs/2509.21967,,,,
+arXiv,No-reference Quality Assessment of Contrast-distorted Images using Contrast-enhanced Pseudo Reference,arXiv,2025,,,https://arxiv.org/abs/2510.05053,,,,
+arXiv,Non-Aligned Reference Image Quality Assessment for Novel View Synthesis,arXiv,2025,,,https://arxiv.org/abs/2511.08155,,,,
+arXiv,OmniQuality-R: Advancing Reward Models Through All-Encompassing Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2510.10609,,,,
+arXiv,On the dynamic evolution of CLIP texture-shape bias and its relationship to human alignment and model robustness,arXiv,2025,,,https://arxiv.org/abs/2508.09814,,,,
+arXiv,Parameter-Efficient Adaptation of mPLUG-Owl2 via Pixel-Level Visual Prompts for NR-IQA,arXiv,2025,,,https://arxiv.org/abs/2509.03494,,,,
+arXiv,"Plug In, Grade Right: Psychology-Inspired AGIQA",arXiv,2025,,,https://arxiv.org/abs/2512.22780,,,,
+arXiv,Q-Agent: Quality-Driven Chain-of-Thought Image Restoration Agent through Robust Multimodal Large Language Model,arXiv,2025,,,https://arxiv.org/abs/2504.07148,,,,
+arXiv,Q-Doc: Benchmarking Document Image Quality Assessment Capabilities in Multi-modal Large Language Models,arXiv,2025,,,https://arxiv.org/abs/2511.11410,,,,
+arXiv,Q-Insight: Understanding Image Quality via Visual Reinforcement Learning,arXiv,2025,,,https://arxiv.org/abs/2503.22679,,,,
+arXiv,Quantum DPLL and Generalized Constraints in Iterative Quantum Algorithms,arXiv,2025,,,https://arxiv.org/abs/2509.02689,,,,
+arXiv,Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2510.11369,,,,
+arXiv,Refine-IQA: Multi-Stage Reinforcement Finetuning for Perceptual Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2508.03763,,,,
+arXiv,Revisiting MLLM Based Image Quality Assessment: Errors and Remedy,arXiv,2025,,,https://arxiv.org/abs/2511.07812,,,,
+arXiv,Revisiting Vision Language Foundations for No-Reference Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2509.17374,,,,
+arXiv,SA-IQA: Redefining Image Quality Assessment for Spatial Aesthetics with Multi-Dimensional Rewards,arXiv,2025,,,https://arxiv.org/abs/2512.05098,,,,
+arXiv,SEGA: A Transferable Signed Ensemble Gaussian Black-Box Attack against No-Reference Image Quality Assessment Models,arXiv,2025,,,https://arxiv.org/abs/2509.18546,,,,
+arXiv,STORM: Benchmarking Visual Rating of MLLMs with a Comprehensive Ordinal Regression Dataset,arXiv,2025,,,https://arxiv.org/abs/2506.01738,,,,
+arXiv,Scene Perceived Image Perceptual Score (SPIPS): combining global and local perception for image quality assessment,arXiv,2025,,,https://arxiv.org/abs/2504.17234,,,,
+arXiv,Segmenting and Understanding: Region-aware Semantic Attention for Fine-grained Image Quality Assessment with Large Language Models,arXiv,2025,,,https://arxiv.org/abs/2508.07818,,,,
+arXiv,Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking,arXiv,2025,,,https://arxiv.org/abs/2509.25787,,,,
+arXiv,TRIQA: Image Quality Assessment by Contrastive Pretraining on Ordered Distortion Triplets,arXiv,2025,,,https://arxiv.org/abs/2507.12687,,,,
+arXiv,Taylor expansion-based Kolmogorov-Arnold network for blind image quality assessment,arXiv,2025,,,https://arxiv.org/abs/2505.21592,,,,
+arXiv,Teaching LMMs for Image Quality Scoring and Interpreting,arXiv,2025,,,https://arxiv.org/abs/2503.09197,,,,
+arXiv,Teaching Large Language Models to Regress Accurate Image Quality Scores using Score Distribution,arXiv,2025,,,https://arxiv.org/abs/2501.11561,,,,
+arXiv,Text-Visual Semantic Constrained AI-Generated Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.10432,,,,
+arXiv,The Unanticipated Asymmetry Between Perceptual Optimization and Assessment,arXiv,2025,,,https://arxiv.org/abs/2509.20878,,,,
+arXiv,The anomalously slow dynamics of inhomogeneous quantum annealing,arXiv,2025,,,https://arxiv.org/abs/2502.03535,,,,
+arXiv,The-Bodega: A Matlab Toolbox for Biologically Dynamic Microbubble Simulations on Realistic Hemodynamic Microvascular Graphs,arXiv,2025,,,https://arxiv.org/abs/2509.08149,,,,
+arXiv,Towards Explainable Partial-AIGC Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2504.09291,,,,
+arXiv,TuningIQA: Fine-Grained Blind Image Quality Assessment for Livestreaming Camera Tuning,arXiv,2025,,,https://arxiv.org/abs/2508.17965,,,,
+arXiv,"UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement",arXiv,2025,,,https://arxiv.org/abs/2512.06750,,,,
+arXiv,Unsupervised Multi-Clustering and Decision-Making Strategies for 4D-STEM Orientation Mapping,arXiv,2025,,,https://arxiv.org/abs/2503.06699,,,,
+arXiv,VQualA 2025 Challenge on Image Super-Resolution Generated Content Quality Assessment: Methods and Results,arXiv,2025,,,https://arxiv.org/abs/2509.06413,,,,
+arXiv,ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images,arXiv,2025,,,https://arxiv.org/abs/2508.12605,,,,
+arXiv,Visual-Language Model Knowledge Distillation Method for Image Quality Assessment,arXiv,2025,,,https://arxiv.org/abs/2507.15680,,,,
+arXiv,VisualQuality-R1: Reasoning-Induced Image Quality Assessment via Reinforcement Learning to Rank,arXiv,2025,,,https://arxiv.org/abs/2505.14460,,,,
+arXiv,Voxify3D: Pixel Art Meets Volumetric Rendering,arXiv,2025,,,https://arxiv.org/abs/2512.07834,,,,
+arXiv,iDETEX: Empowering MLLMs for Intelligent DETailed EXplainable IQA,arXiv,2025,,,https://arxiv.org/abs/2510.17332,,,,
+arXiv,Application of Ideal Observer for Thresholded Data in Search Task,arXiv,2026,,,https://arxiv.org/abs/2601.07976,AVA,,,auto-parsed
+arXiv,ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration,arXiv,2026,,,https://arxiv.org/abs/2601.02763,AVA,,,auto-parsed
+arXiv,Decoupling Perception and Calibration: Label-Efficient Image Quality Assessment Framework,arXiv,2026,,,https://arxiv.org/abs/2601.20689,KonIQ-10k; SPAQ; AVA,SRCC; PLCC,"SRCC: 0.841, 0.834, 0.816; PLCC: 0.899, 0.841, 0.835",auto-parsed
+arXiv,Enhancing Image Quality Assessment Ability of LMMs via Retrieval-Augmented Generation,arXiv,2026,,,https://arxiv.org/abs/2601.08311,KonIQ-10k; SPAQ; KADID-10k; CLIVE; LIVE,SRCC; PLCC,,auto-parsed
+arXiv,Q-Hawkeye: Reliable Visual Policy Optimization for Image Quality Assessment,arXiv,2026,,,https://arxiv.org/abs/2601.22920,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; AVA,SRCC; PLCC,,auto-parsed
+arXiv,Q-Probe: Scaling Image Quality Assessment to High Resolution via Context-Aware Agentic Probing,arXiv,2026,,,https://arxiv.org/abs/2601.15356,KonIQ-10k; SPAQ; KADID-10k,SRCC; PLCC,"SRCC: 0.728, 0.510; PLCC: 0.776, 0.698, 0.510",auto-parsed
+arXiv,Understanding Pure Textual Reasoning for Blind Image Quality Assessment,arXiv,2026,,,https://arxiv.org/abs/2601.02441,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; AVA,SRCC; PLCC,"SRCC: 0.03, 0.02",auto-parsed
+arXiv,VTONQA: A Multi-Dimensional Quality Assessment Dataset for Virtual Try-on,arXiv,2026,,,https://arxiv.org/abs/2601.02945,LIVE,SRCC; PLCC; KRCC,,auto-parsed
+arXiv,Zoom-IQA: Image Quality Assessment with Reliable Region-Aware Reasoning,arXiv,2026,,,https://arxiv.org/abs/2601.02918,KonIQ-10k; SPAQ; KADID-10k; LIVE; CSIQ; AVA,SRCC; PLCC,,auto-parsed

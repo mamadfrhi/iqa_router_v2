@@ -1,0 +1,23 @@
+Running dataset=livec data_root=/local/data/b-s-farrahi phase=test
+Loading dataset livec from /local/data/b-s-farrahi ...
+/opt/conda/lib/python3.10/site-packages/torch/hub.py:884: UserWarning: 'torch.load' received a zip file that looks like a TorchScript archive dispatching to 'torch.jit.load' (call 'torch.jit.load' directly to silence this warning)
+  return torch.load(cached_file, map_location=map_location, weights_only=weights_only)
+Running expert arniqa on 1162 images (done=1152)
+Traceback (most recent call last):
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 148, in <module>
+    main()
+  File "/local/code/pyiqa_pipeline/02_run_experts_pyiqa.py", line 127, in main
+    y = model(img_path)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/models/inference_model.py", line 99, in forward
+    target = imread2tensor(target, rgb=True)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 60, in imread2tensor
+    img = imread2pil(img_source, rgb)
+  File "/opt/conda/lib/python3.10/site-packages/pyiqa/utils/img_util.py", line 43, in imread2pil
+    img = Image.open(img_source)
+  File "/opt/conda/lib/python3.10/site-packages/PIL/Image.py", line 3309, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file '/local/data/b-s-farrahi/LIVEC/Images/100.bmp'

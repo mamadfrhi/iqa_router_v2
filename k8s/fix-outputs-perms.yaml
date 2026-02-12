@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iqa-fix-outputs-perms
+  namespace: b-s-farrahi
+spec:
+  ttlSecondsAfterFinished: 3600
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsUser: 0
+      containers:
+      - name: fix-perms
+        image: ws.ab/b-s-farrahi/iqa-pyiqa:0.3
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+        command: ["/bin/bash","-lc"]
+        args:
+        - |
+          set -euo pipefail
+          chgrp -R 1026 /local/outputs
+          chmod -R g+rwX /local/outputs
+        volumeMounts:
+        - mountPath: /local/outputs
+          name: outputs
+      volumes:
+      - name: outputs
+        hostPath:
+          path: /shared/ssd/home/b-s-farrahi/iqa_router_v2/outputs
+          type: Directory

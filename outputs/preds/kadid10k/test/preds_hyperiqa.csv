@@ -1,0 +1,11 @@
+image_path,raw_score,latency_ms
+/local/data/b-s-farrahi/kadid10k/images/I01_01_01.png,0.7119720578193665,97.85323700634763
+/local/data/b-s-farrahi/kadid10k/images/I01_01_02.png,0.6081727743148804,98.4779639984481
+/local/data/b-s-farrahi/kadid10k/images/I01_01_03.png,0.31042227149009705,97.58083097403869
+/local/data/b-s-farrahi/kadid10k/images/I01_01_04.png,0.23609958589076996,91.97486395714805
+/local/data/b-s-farrahi/kadid10k/images/I01_01_05.png,0.21545138955116272,11.83375099208206
+/local/data/b-s-farrahi/kadid10k/images/I01_02_01.png,0.4381364583969116,97.97949600033462
+/local/data/b-s-farrahi/kadid10k/images/I01_02_02.png,0.27539771795272827,97.78295300202444
+/local/data/b-s-farrahi/kadid10k/images/I01_02_03.png,0.23337732255458832,91.61485399818048
+/local/data/b-s-farrahi/kadid10k/images/I01_02_04.png,0.2159200757741928,12.141606013756245
+/local/data/b-s-farrahi/kadid10k/images/I01_02_05.png,0.22666572034358978,97.0209400402382
